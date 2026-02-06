@@ -3,6 +3,7 @@ import Hero from "@/components/sections/Hero";
 import SocialGrid from "@/components/sections/SocialGrid";
 import Brand from "@/components/sections/Brand";
 import SketchToSkin from "@/components/sections/SketchToSkin";
+import TheMakers from "@/components/sections/TheMakers";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <SocialGrid />
       <Brand />
       <SketchToSkin />
+      <TheMakers />
     </main>
   );
 }
