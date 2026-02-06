@@ -9,9 +9,7 @@ export default function Footer() {
             <div className="relative z-10 w-full max-w-[1800px] mx-auto px-4 md:px-12">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8">
 
-                    {/* Left Column: Metadata (Matches Brand layout) */}
                     <div className="lg:col-span-4 flex flex-col justify-between h-full lg:min-h-0">
-                        {/* Top Label */}
                         <div className="flex flex-col items-start gap-4 mb-10 lg:mb-0">
                             <h2 className="text-xs font-inter font-bold tracking-[0.2em] uppercase text-neutral-500">
                                 Contact
@@ -26,7 +24,6 @@ export default function Footer() {
                             </div>
                         </div>
 
-                        {/* Bottom Metadata */}
                         <div className="grid grid-cols-2 gap-8 lg:pt-0">
                             <div className="space-y-4">
                                 <div>
@@ -56,7 +53,6 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    {/* Right Column: Statement / Link (Matches Brand layout) */}
                     <div className="lg:col-span-8 flex flex-col gap-10 lg:pl-12">
                         <h3 className="font-rozha text-3xl md:text-5xl lg:text-6xl leading-[1.1] text-black">
                             Ready to express your story? <span className="italic font-playfair font-thin text-black/50">Book a consultation</span> and let's create something timeless.

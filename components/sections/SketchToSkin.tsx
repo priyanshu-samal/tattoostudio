@@ -25,7 +25,7 @@ export default function SketchToSkin() {
     const handleMouseDown = () => setIsDragging(true);
     const handleMouseUp = () => setIsDragging(false);
 
-    // Add global event listeners for drag end (in case mouse leaves container)
+
     useEffect(() => {
         if (isDragging) {
             window.addEventListener('mousemove', handleMove);
@@ -51,7 +51,6 @@ export default function SketchToSkin() {
             <div className="w-full max-w-[1800px] mx-auto px-4 md:px-12">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
 
-                    {/* Left Column: Typography */}
                     <div className="lg:col-span-5 flex flex-col gap-8">
                         <div>
                             <h2 className="text-xs font-inter font-bold tracking-[0.2em] uppercase text-neutral-400 mb-6">
@@ -72,7 +71,6 @@ export default function SketchToSkin() {
                         </div>
                     </div>
 
-                    {/* Right Column: Interactive Slider */}
                     <div className="lg:col-span-7 w-full">
                         <div
                             ref={containerRef}
@@ -80,10 +78,9 @@ export default function SketchToSkin() {
                             onMouseDown={handleMouseDown}
                             onTouchStart={handleMouseDown}
                         >
-                            {/* Base Image (Result / Skin) */}
                             <div className="absolute inset-0 w-full h-full bg-neutral-100/50">
                                 <Image
-                                    src="/info/1.jpg" // Using an existing tattoo image
+                                    src="/info/1.jpg"
                                     alt="Final Tattoo"
                                     fill
                                     className="object-cover"
@@ -94,20 +91,18 @@ export default function SketchToSkin() {
                                 </div>
                             </div>
 
-                            {/* Overlay Image (Sketch) - Clipped */}
                             <div
                                 className="absolute inset-0 w-full h-full bg-white transition-none"
                                 style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
                             >
                                 <div className="absolute inset-0 w-full h-full grayscale contrast-125 brightness-110 bg-white">
                                     <Image
-                                        src="/info/1.jpg" // Using same image + css filters to simulate sketch for now
+                                        src="/info/1.jpg"
                                         alt="Initial Sketch"
                                         fill
                                         className="object-cover opacity-80 mix-blend-multiply"
                                         draggable={false}
                                     />
-                                    {/* Paper texture overlay simulation */}
                                     <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')] opacity-40 mix-blend-multiply"></div>
                                 </div>
                                 <div className="absolute bottom-6 left-6 text-black text-xs font-bold font-inter tracking-widest uppercase z-10">
@@ -115,7 +110,6 @@ export default function SketchToSkin() {
                                 </div>
                             </div>
 
-                            {/* Slider Handle */}
                             <div
                                 className="absolute top-0 bottom-0 w-[2px] bg-white z-20 cursor-ew-resize shadow-[0_0_20px_rgba(0,0,0,0.3)]"
                                 style={{ left: `${sliderPosition}%` }}

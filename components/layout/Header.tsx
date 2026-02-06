@@ -18,7 +18,6 @@ export default function Header() {
                 ))}
             </nav>
             <button className="md:hidden text-2xl">
-                {/* Mobile Menu Icon Placeholder */}
                 ☰
             </button>
         </header>

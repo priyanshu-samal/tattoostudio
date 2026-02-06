@@ -12,7 +12,6 @@ export default function VideoCarousel() {
         <section className="relative w-full bg-white text-black py-24 overflow-hidden">
             <div className="w-full max-w-[1800px] mx-auto px-4 md:px-12 mb-12">
 
-                {/* Header Layout */}
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 border-b border-black/10 pb-8">
                     <h2 className="text-xs font-inter font-bold tracking-[0.2em] uppercase text-neutral-400 mb-4 md:mb-0">
                         Visual Gallery
@@ -22,15 +21,7 @@ export default function VideoCarousel() {
                     </p>
                 </div>
 
-                {/* Infinite Carousel */}
                 <div className="relative w-full overflow-hidden">
-                    {/* 
-                        gap-16: Increased padding between videos.
-                        Width logic: We create a base set of 12 videos (original 6 duplicated once) 
-                        to ensure it's wider than any screen.
-                        Then we render that base set TWICE ([Set][Set]) and animate -50% (globals.css).
-                        This ensures a perfect seamless loop.
-                    */}
                     <div className="flex w-max animate-scroll hover:pause-animation">
                         {[...videos, ...videos, ...videos, ...videos].map((src, i) => (
                             <div
@@ -53,7 +44,6 @@ export default function VideoCarousel() {
                     </div>
                 </div>
 
-                {/* Footer Layout */}
                 <div className="flex flex-col md:flex-row justify-between items-center mt-12 border-t border-black/10 pt-8">
                     <h3 className="text-xs font-inter font-bold tracking-[0.2em] uppercase text-black">
                         Artistry In Motion

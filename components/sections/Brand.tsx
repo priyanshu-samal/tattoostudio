@@ -3,7 +3,6 @@ import { ArrowUpRight } from "lucide-react";
 export default function Brand() {
     return (
         <section className="relative z-20 lg:-mt-24 w-full bg-[#0a0a0a] text-neutral-200 py-12 lg:py-24 overflow-hidden rounded-t-[50px]">
-            {/* Background Grid (Subtle) */}
             <div className="absolute inset-0 grid grid-cols-6 md:grid-cols-12 pointer-events-none z-0 opacity-10">
                 {Array.from({ length: 12 }).map((_, i) => (
                     <div
@@ -16,16 +15,13 @@ export default function Brand() {
             <div className="relative z-10 w-full max-w-[1800px] mx-auto px-4 md:px-12">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8">
 
-                    {/* Left Column: Brand Label + Metadata */}
                     <div className="lg:col-span-4 flex flex-col justify-between h-full lg:min-h-0">
-                        {/* Top Label */}
                         <div className="flex items-center gap-2 mb-8 lg:mb-0">
                             <h2 className="text-xs font-inter font-bold tracking-[0.2em] uppercase text-neutral-500">
                                 The Brand
                             </h2>
                         </div>
 
-                        {/* Bottom Metadata */}
                         <div className="grid grid-cols-2 gap-8 lg:pt-0">
                             <div className="space-y-4">
                                 <div>
@@ -51,7 +47,6 @@ export default function Brand() {
                         </div>
                     </div>
 
-                    {/* Right Column: Statement */}
                     <div className="lg:col-span-8 flex flex-col gap-10 lg:pl-12">
                         <h3 className="font-rozha text-3xl md:text-5xl lg:text-6xl leading-[1.1] text-white">
                             Takshila offers <span className="italic font-playfair font-thin text-white/50">a journey</span> through artistic expression, with each design crafted to <span className="italic font-playfair font-thin text-white/50">honor</span> your personal narrative.

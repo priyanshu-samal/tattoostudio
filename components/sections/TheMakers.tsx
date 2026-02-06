@@ -4,7 +4,6 @@ import { ArrowUpRight } from "lucide-react";
 export default function TheMakers() {
     return (
         <section className="relative w-full bg-[#0a0a0a] text-neutral-200 py-20 lg:py-32 overflow-hidden">
-            {/* Background Texture/Grid */}
             <div className="absolute inset-0 grid grid-cols-6 md:grid-cols-12 pointer-events-none z-0 opacity-5">
                 {Array.from({ length: 12 }).map((_, i) => (
                     <div
@@ -16,7 +15,6 @@ export default function TheMakers() {
 
             <div className="relative z-10 w-full max-w-[1800px] mx-auto px-4 md:px-12">
 
-                {/* Section Header */}
                 <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
                     <div>
                         <h2 className="text-xs font-inter font-bold tracking-[0.2em] uppercase text-neutral-500 mb-6">
@@ -32,7 +30,6 @@ export default function TheMakers() {
                     </p>
                 </div>
 
-                {/* Artists Grid */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-8">
                     {[
                         {
@@ -67,7 +64,6 @@ export default function TheMakers() {
                         <div key={idx} className="group relative h-[400px] cursor-pointer [perspective:1000px]">
                             <div className="relative w-full h-full transition-all duration-700 transform [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
-                                {/* Front: Tattoo Work */}
                                 <div className="absolute inset-0 [backface-visibility:hidden]">
                                     <div className="relative w-full h-full bg-neutral-900 overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
                                         <Image
@@ -76,7 +72,6 @@ export default function TheMakers() {
                                             fill
                                             className="object-cover"
                                         />
-                                        {/* Artist Name on Front for context */}
                                         <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
                                             <h4 className="font-rozha text-xl text-white">{artist.name}</h4>
                                             <p className="font-inter text-[10px] uppercase tracking-widest text-neutral-400">{artist.role}</p>
@@ -84,7 +79,6 @@ export default function TheMakers() {
                                     </div>
                                 </div>
 
-                                {/* Back: Artist Portrait + Ideology */}
                                 <div className="absolute inset-0 h-full w-full [backface-visibility:hidden] [transform:rotateY(180deg)] bg-black">
                                     <Image
                                         src={artist.artistImage}

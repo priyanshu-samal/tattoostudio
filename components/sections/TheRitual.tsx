@@ -33,7 +33,6 @@ export default function TheRitual() {
         <section className="relative w-full bg-[#0a0a0a] text-neutral-200 py-24 lg:py-32 overflow-hidden">
             <div className="w-full max-w-[1800px] mx-auto px-4 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
 
-                {/* Left Column: Title & Intro */}
                 <div className="lg:col-span-5 relative">
                     <h2 className="text-xs font-inter font-bold tracking-[0.2em] uppercase text-neutral-500 mb-8">
                         Process
@@ -46,11 +45,9 @@ export default function TheRitual() {
                         Polishing the details before the needle touches skin. A transparent look into how we transform abstract ideas into permanent legacy.
                     </p>
 
-                    {/* Decorative Line vertically */}
                     <div className="absolute left-0 top-full h-32 w-[1px] bg-gradient-to-b from-white/20 to-transparent mt-12 hidden lg:block"></div>
                 </div>
 
-                {/* Right Column: Accordion */}
                 <div className="lg:col-span-7 flex flex-col justify-center">
                     {rituals.map((item, index) => (
                         <div key={index} className="border-b border-white/10 last:border-0">
