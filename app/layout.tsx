@@ -1,21 +1,25 @@
 import type { Metadata } from "next";
 import { Rozha_One, Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
+import GoogleWrapper from "@/components/providers/GoogleWrapper";
 
 const rozhaOne = Rozha_One({
   weight: "400",
   subsets: ["devanagari", "latin"],
   variable: "--font-rozha",
+  display: "swap",
 });
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
+  display: "swap",
 });
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -34,7 +38,9 @@ export default function RootLayout({
       <body
         className={`${rozhaOne.variable} ${playfair.variable} ${inter.variable} antialiased`}
       >
-        {children}
+        <GoogleWrapper>
+          {children}
+        </GoogleWrapper>
       </body>
     </html>
   );
