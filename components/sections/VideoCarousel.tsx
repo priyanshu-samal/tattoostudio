@@ -23,7 +23,7 @@ export default function VideoCarousel() {
                 </div>
 
                 {/* Infinite Carousel */}
-                <div className="relative w-full overflow-hidden mask-gradient-sides">
+                <div className="relative w-full overflow-hidden">
                     {/* 
                         gap-16: Increased padding between videos.
                         Width logic: We create a base set of 12 videos (original 6 duplicated once) 

@@ -5,10 +5,11 @@ import Brand from "@/components/sections/Brand";
 import SketchToSkin from "@/components/sections/SketchToSkin";
 import TheMakers from "@/components/sections/TheMakers";
 import VideoCarousel from "@/components/sections/VideoCarousel";
+import TheRitual from "@/components/sections/TheRitual";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-black text-white overflow-x-hidden">
       <Header />
       <Hero />
       <SocialGrid />
@@ -16,6 +17,7 @@ export default function Home() {
       <SketchToSkin />
       <TheMakers />
       <VideoCarousel />
+      <TheRitual />
     </main>
   );
 }
