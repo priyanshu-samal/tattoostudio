@@ -6,6 +6,7 @@ import SketchToSkin from "@/components/sections/SketchToSkin";
 import TheMakers from "@/components/sections/TheMakers";
 import VideoCarousel from "@/components/sections/VideoCarousel";
 import TheRitual from "@/components/sections/TheRitual";
+import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <TheMakers />
       <VideoCarousel />
       <TheRitual />
+      <Footer />
     </main>
   );
 }
