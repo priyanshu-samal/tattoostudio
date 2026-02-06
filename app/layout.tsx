@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Rozha_One, Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import GoogleWrapper from "@/components/providers/GoogleWrapper";
+import { Analytics } from "@vercel/analytics/react";
 
 const rozhaOne = Rozha_One({
   weight: "400",
@@ -41,6 +42,7 @@ export default function RootLayout({
         <GoogleWrapper>
           {children}
         </GoogleWrapper>
+        <Analytics />
       </body>
     </html>
   );
