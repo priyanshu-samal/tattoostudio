@@ -29,11 +29,14 @@ export default function DashboardPage() {
         fetchProfile();
     }, []);
 
-    const handleSignOut = () => {
-
-        localStorage.removeItem("auth_token");
-        document.cookie = "auth_token=; path=/; max-age=0";
-        router.push("/");
+    const handleSignOut = async () => {
+        try {
+            await axios.post("/api/auth/logout");
+            localStorage.removeItem("auth_token");
+            window.location.href = "/"; // Force full reload to clear client state
+        } catch (error) {
+            console.error("Logout failed", error);
+        }
     };
 
     return (
