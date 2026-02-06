@@ -13,22 +13,16 @@ export default function Header() {
 
     const handleLoginSuccess = async (credentialResponse: any) => {
         try {
-            const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-            if (!apiUrl) {
-                console.error("API URL not configured");
-                return;
-            }
 
-            // Backend expects a JWT (ID Token), which is in credentialResponse.credential
-            const response = await axios.post(`${apiUrl}/google_login`, {
+            const response = await axios.post(`/api/auth/login`, {
                 token: credentialResponse.credential
             });
 
             if (response.status === 200) {
-                // Set logic cookie for Middleware access (server-side protection)
-                document.cookie = "auth_token=true; path=/; max-age=86400"; // Expires in 1 day
 
-                // Keep localStorage for client-side checks if needed
+                document.cookie = "auth_token=true; path=/; max-age=86400";
+
+
                 localStorage.setItem("auth_token", "true");
                 router.push("/dashboard");
             }
@@ -44,14 +38,14 @@ export default function Header() {
 
     return (
         <header className="fixed top-0 left-0 w-full z-50">
-            {/* Top Bar - Blended */}
+
             <div className="flex justify-between items-center px-6 py-4 md:px-12 md:py-6 mix-blend-difference text-white relative z-50">
                 <div className="text-xl font-bold tracking-tighter uppercase font-inter">
                     Takshila
                 </div>
 
                 <div className="flex items-center gap-8">
-                    {/* Desktop Navigation */}
+
                     <nav className="hidden md:flex gap-8 text-sm font-medium tracking-wide uppercase">
                         {["Home", "Artists", "Contact"].map((item) => (
                             <Link
@@ -74,7 +68,7 @@ export default function Header() {
                         />
                     </div>
 
-                    {/* Mobile Menu Button */}
+
                     <button
                         onClick={toggleMenu}
                         className="md:hidden text-2xl focus:outline-none"
@@ -84,7 +78,7 @@ export default function Header() {
                 </div>
             </div>
 
-            {/* Mobile Menu Overlay - Solid Background (No Blend Mode) */}
+
             <div className={`fixed inset-0 bg-[#0a0a0a] z-40 flex flex-col items-center justify-center gap-8 transition-transform duration-300 ease-in-out md:hidden ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`} style={{ mixBlendMode: 'normal' }}>
                 <nav className="flex flex-col items-center gap-8 text-3xl font-playfair italic tracking-wider text-white">
                     {["Home", "Artists", "Contact"].map((item) => (

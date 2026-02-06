@@ -10,21 +10,12 @@ export default function DashboardPage() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
 
-    // Fetch Profile on Load
+
     useEffect(() => {
         const fetchProfile = async () => {
             try {
-                const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-                if (!apiUrl) return;
 
-                // Call the API endpoint: GET /fetch_profile
-                // Note: axios automatically sends cookies (if httpOnly) or we might need to attach Authorization header 
-                // depending on how your backend handles sessions. 
-                // Based on your Postman, it looks like a simple GET request.
-                // Assuming the backend set a cookie during the /google_login call.
-                const response = await axios.get(`${apiUrl}/fetch_profile`, {
-                    withCredentials: true // Important for sending cookies cross-origin
-                });
+                const response = await axios.get(`/api/user/profile`);
 
                 setProfile(response.data);
             } catch (err: any) {
@@ -39,9 +30,9 @@ export default function DashboardPage() {
     }, []);
 
     const handleSignOut = () => {
-        // Clear both storage and cookie
+
         localStorage.removeItem("auth_token");
-        document.cookie = "auth_token=; path=/; max-age=0"; // Expire cookie immediately
+        document.cookie = "auth_token=; path=/; max-age=0";
         router.push("/");
     };
 

@@ -15,9 +15,9 @@ export default function SketchToSkin() {
         const containerRect = containerRef.current.getBoundingClientRect();
         const clientX = 'touches' in event ? event.touches[0].clientX : event.clientX;
 
-        // Calculate position percentage (0 to 100)
+
         let position = ((clientX - containerRect.left) / containerRect.width) * 100;
-        position = Math.max(0, Math.min(100, position)); // Clamp between 0 and 100
+        position = Math.max(0, Math.min(100, position));
 
         setSliderPosition(position);
     };
